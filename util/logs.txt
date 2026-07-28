@@ -1,0 +1,101 @@
+2026-07-26T22:19:55.593723+01:00 alexander-ubuntu gdm-autologin]: gkr-pam: no password is available for user
+2026-07-26T22:19:55.612078+01:00 alexander-ubuntu gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user alexander(uid=1000) by alexander(uid=0)
+2026-07-26T22:19:55.624273+01:00 alexander-ubuntu systemd-logind[1218]: New session 1 of user alexander.
+2026-07-26T22:19:55.630460+01:00 alexander-ubuntu (systemd): pam_unix(systemd-user:session): session opened for user alexander(uid=1000) by alexander(uid=0)
+2026-07-26T22:19:55.766538+01:00 alexander-ubuntu gdm-autologin]: gkr-pam: couldn't unlock the login keyring.
+2026-07-26T22:19:58.133449+01:00 alexander-ubuntu gnome-keyring-daemon[2033]: The Secret Service was already initialized
+2026-07-26T22:19:58.133505+01:00 alexander-ubuntu gnome-keyring-daemon[2356]: discover_other_daemon: 1
+2026-07-26T22:19:58.133665+01:00 alexander-ubuntu gnome-keyring-daemon[2033]: The PKCS#11 component was already initialized
+2026-07-26T22:19:58.133766+01:00 alexander-ubuntu gnome-keyring-daemon[2357]: discover_other_daemon: 1
+2026-07-26T22:19:58.152941+01:00 alexander-ubuntu gnome-keyring-daemon[2360]: discover_other_daemon: 1
+2026-07-26T22:19:59.328727+01:00 alexander-ubuntu polkitd[1194]: Registered Authentication Agent for unix-session:1 (system bus name :1.41 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_GB.UTF-8)
+2026-07-26T21:21:02.068867+01:00 alexander-ubuntu pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by alexander(uid=1000)
+2026-07-26T21:21:02.069043+01:00 alexander-ubuntu pkexec[3821]: alexander: Executing command [USER=root] [TTY=unknown] [CWD=/home/alexander] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+2026-07-26T21:25:01.050538+01:00 alexander-ubuntu CRON[4151]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-26T21:25:01.052224+01:00 alexander-ubuntu CRON[4151]: pam_unix(cron:session): session closed for user root
+2026-07-26T21:27:36.142695+01:00 alexander-ubuntu gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname=alexander uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=alexander
+2026-07-26T21:27:40.762624+01:00 alexander-ubuntu gdm-password]: gkr-pam: unlocked login keyring
+2026-07-26T21:27:46.050044+01:00 alexander-ubuntu systemd-logind[1218]: The system will power off now!
+2026-07-26T21:27:46.060600+01:00 alexander-ubuntu systemd-logind[1218]: System is powering down.
+2026-07-26T21:27:46.071938+01:00 alexander-ubuntu gdm-autologin]: pam_unix(gdm-autologin:session): session closed for user alexander
+2026-07-27T20:47:15.218970+01:00 alexander-ubuntu polkitd[1207]: Loading rules from directory /etc/polkit-1/rules.d
+2026-07-27T20:47:15.219307+01:00 alexander-ubuntu polkitd[1207]: Loading rules from directory /usr/share/polkit-1/rules.d
+2026-07-27T20:47:15.225488+01:00 alexander-ubuntu polkitd[1207]: Finished loading, compiling and executing 16 rules
+2026-07-27T20:47:15.225925+01:00 alexander-ubuntu polkitd[1207]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+2026-07-27T20:47:16.497940+01:00 alexander-ubuntu gdm-autologin]: gkr-pam: no password is available for user
+2026-07-27T20:47:16.515183+01:00 alexander-ubuntu gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user alexander(uid=1000) by alexander(uid=0)
+2026-07-27T20:47:16.539985+01:00 alexander-ubuntu systemd-logind[1232]: New session 1 of user alexander.
+2026-07-27T20:47:16.546262+01:00 alexander-ubuntu (systemd): pam_unix(systemd-user:session): session opened for user alexander(uid=1000) by alexander(uid=0)
+2026-07-27T20:47:16.699202+01:00 alexander-ubuntu gdm-autologin]: gkr-pam: couldn't unlock the login keyring.
+2026-07-27T20:47:19.014206+01:00 alexander-ubuntu gnome-keyring-daemon[1996]: The Secret Service was already initialized
+2026-07-27T20:47:19.014295+01:00 alexander-ubuntu gnome-keyring-daemon[2319]: discover_other_daemon: 1
+2026-07-27T20:47:19.014489+01:00 alexander-ubuntu gnome-keyring-daemon[1996]: The PKCS#11 component was already initialized
+2026-07-27T20:47:19.014560+01:00 alexander-ubuntu gnome-keyring-daemon[2321]: discover_other_daemon: 1
+2026-07-27T20:47:19.015491+01:00 alexander-ubuntu gnome-keyring-daemon[2323]: discover_other_daemon: 1
+2026-07-27T20:47:20.156219+01:00 alexander-ubuntu polkitd[1207]: Registered Authentication Agent for unix-session:1 (system bus name :1.42 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_GB.UTF-8)
+2026-07-27T19:48:21.698315+01:00 alexander-ubuntu pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by alexander(uid=1000)
+2026-07-27T19:48:21.698514+01:00 alexander-ubuntu pkexec[3739]: alexander: Executing command [USER=root] [TTY=unknown] [CWD=/home/alexander] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+2026-07-27T19:49:06.253549+01:00 alexander-ubuntu systemd-logind[1232]: The system will power off now!
+2026-07-27T19:49:06.272450+01:00 alexander-ubuntu systemd-logind[1232]: System is powering down.
+2026-07-27T19:49:06.289219+01:00 alexander-ubuntu gdm-autologin]: pam_unix(gdm-autologin:session): session closed for user alexander
+2026-07-28T20:59:10.261289+01:00 alexander-ubuntu polkitd[1196]: Loading rules from directory /etc/polkit-1/rules.d
+2026-07-28T20:59:10.261386+01:00 alexander-ubuntu polkitd[1196]: Loading rules from directory /usr/share/polkit-1/rules.d
+2026-07-28T20:59:10.268077+01:00 alexander-ubuntu polkitd[1196]: Finished loading, compiling and executing 16 rules
+2026-07-28T20:59:10.268348+01:00 alexander-ubuntu polkitd[1196]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+2026-07-28T20:59:11.612529+01:00 alexander-ubuntu gdm-autologin]: gkr-pam: no password is available for user
+2026-07-28T20:59:11.642284+01:00 alexander-ubuntu gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user alexander(uid=1000) by alexander(uid=0)
+2026-07-28T20:59:11.649395+01:00 alexander-ubuntu systemd-logind[1221]: New session 1 of user alexander.
+2026-07-28T20:59:11.655158+01:00 alexander-ubuntu (systemd): pam_unix(systemd-user:session): session opened for user alexander(uid=1000) by alexander(uid=0)
+2026-07-28T20:59:11.805678+01:00 alexander-ubuntu gdm-autologin]: gkr-pam: couldn't unlock the login keyring.
+2026-07-28T20:59:14.211990+01:00 alexander-ubuntu gnome-keyring-daemon[1993]: The Secret Service was already initialized
+2026-07-28T20:59:14.212050+01:00 alexander-ubuntu gnome-keyring-daemon[2318]: discover_other_daemon: 1
+2026-07-28T20:59:14.212151+01:00 alexander-ubuntu gnome-keyring-daemon[1993]: The PKCS#11 component was already initialized
+2026-07-28T20:59:14.212217+01:00 alexander-ubuntu gnome-keyring-daemon[2319]: discover_other_daemon: 1
+2026-07-28T20:59:14.213278+01:00 alexander-ubuntu gnome-keyring-daemon[2322]: discover_other_daemon: 1
+2026-07-28T20:59:15.386142+01:00 alexander-ubuntu polkitd[1196]: Registered Authentication Agent for unix-session:1 (system bus name :1.42 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_GB.UTF-8)
+2026-07-28T20:00:17.095903+01:00 alexander-ubuntu pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by alexander(uid=1000)
+2026-07-28T20:00:17.096144+01:00 alexander-ubuntu pkexec[5471]: alexander: Executing command [USER=root] [TTY=unknown] [CWD=/home/alexander] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+2026-07-28T20:05:01.988129+01:00 alexander-ubuntu CRON[10131]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T20:05:01.989552+01:00 alexander-ubuntu CRON[10131]: pam_unix(cron:session): session closed for user root
+2026-07-28T20:06:16.127674+01:00 alexander-ubuntu pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by alexander(uid=1000)
+2026-07-28T20:06:16.127888+01:00 alexander-ubuntu pkexec[10344]: alexander: Executing command [USER=root] [TTY=unknown] [CWD=/home/alexander] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+2026-07-28T20:15:01.992517+01:00 alexander-ubuntu CRON[13546]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T20:15:02.007495+01:00 alexander-ubuntu CRON[13546]: pam_unix(cron:session): session closed for user root
+2026-07-28T20:17:01.996519+01:00 alexander-ubuntu CRON[13895]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T20:17:02.006673+01:00 alexander-ubuntu CRON[13895]: pam_unix(cron:session): session closed for user root
+2026-07-28T20:25:01.010378+01:00 alexander-ubuntu CRON[15715]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T20:25:01.011481+01:00 alexander-ubuntu CRON[15715]: pam_unix(cron:session): session closed for user root
+2026-07-28T20:35:01.015785+01:00 alexander-ubuntu CRON[17419]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T20:35:01.030789+01:00 alexander-ubuntu CRON[17419]: pam_unix(cron:session): session closed for user root
+2026-07-28T20:45:01.022782+01:00 alexander-ubuntu CRON[19126]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T20:45:01.040623+01:00 alexander-ubuntu CRON[19126]: pam_unix(cron:session): session closed for user root
+2026-07-28T20:46:17.509325+01:00 alexander-ubuntu gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname=alexander uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=alexander
+2026-07-28T20:46:39.262135+01:00 alexander-ubuntu gdm-password]: gkr-pam: unlocked login keyring
+2026-07-28T20:55:01.027457+01:00 alexander-ubuntu CRON[21704]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T20:55:01.028826+01:00 alexander-ubuntu CRON[21704]: pam_unix(cron:session): session closed for user root
+2026-07-28T20:57:16.044833+01:00 alexander-ubuntu pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by alexander(uid=1000)
+2026-07-28T20:57:16.045050+01:00 alexander-ubuntu pkexec[23883]: alexander: Executing command [USER=root] [TTY=unknown] [CWD=/home/alexander] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+2026-07-28T21:05:01.032019+01:00 alexander-ubuntu CRON[26395]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T21:05:01.033046+01:00 alexander-ubuntu CRON[26395]: pam_unix(cron:session): session closed for user root
+2026-07-28T21:13:37.134908+01:00 alexander-ubuntu sudo: alexander : TTY=pts/1 ; PWD=/home/alexander/repos/Breakglass-dynamic-secrets/util ; USER=root ; COMMAND=/usr/bin/docker pull ghcr.io/nokia/srlinux:24.10.2
+2026-07-28T21:13:37.135271+01:00 alexander-ubuntu sudo: pam_unix(sudo:session): session opened for user root(uid=0) by alexander(uid=1000)
+2026-07-28T21:14:22.682248+01:00 alexander-ubuntu sudo: pam_unix(sudo:session): session closed for user root
+2026-07-28T21:15:01.036171+01:00 alexander-ubuntu CRON[29110]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T21:15:01.037578+01:00 alexander-ubuntu CRON[29110]: pam_unix(cron:session): session closed for user root
+2026-07-28T21:17:01.039571+01:00 alexander-ubuntu CRON[36168]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T21:17:01.057266+01:00 alexander-ubuntu CRON[36168]: pam_unix(cron:session): session closed for user root
+2026-07-28T21:23:14.122197+01:00 alexander-ubuntu gdm-password]: gkr-pam: unlocked login keyring
+2026-07-28T21:25:01.043228+01:00 alexander-ubuntu CRON[37585]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T21:25:01.044223+01:00 alexander-ubuntu CRON[37585]: pam_unix(cron:session): session closed for user root
+2026-07-28T21:30:01.046608+01:00 alexander-ubuntu CRON[38572]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T21:30:01.061787+01:00 alexander-ubuntu CRON[38572]: pam_unix(cron:session): session closed for user root
+2026-07-28T21:35:01.049930+01:00 alexander-ubuntu CRON[39261]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T21:35:01.064607+01:00 alexander-ubuntu CRON[39261]: pam_unix(cron:session): session closed for user root
+2026-07-28T21:45:01.053599+01:00 alexander-ubuntu CRON[40662]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T21:45:01.055123+01:00 alexander-ubuntu CRON[40662]: pam_unix(cron:session): session closed for user root
+2026-07-28T21:51:25.516601+01:00 alexander-ubuntu gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname=alexander uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=alexander
+2026-07-28T21:51:36.041782+01:00 alexander-ubuntu gdm-password]: gkr-pam: unlocked login keyring
+2026-07-28T21:55:01.057728+01:00 alexander-ubuntu CRON[42615]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T21:55:01.059182+01:00 alexander-ubuntu CRON[42615]: pam_unix(cron:session): session closed for user root
+2026-07-28T22:05:01.061948+01:00 alexander-ubuntu CRON[45239]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-28T22:05:01.062968+01:00 alexander-ubuntu CRON[45239]: pam_unix(cron:session): session closed for user root
