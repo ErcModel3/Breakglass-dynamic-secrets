@@ -3,12 +3,9 @@ import socketserver
 class SyslogHandler(socketserver.BaseRequestHandler):
     def handle(self):
         self.data = self.request.recv(1024).strip()
-        print(f"Received: {self.data}")
-        self.request.sendall(self.data.upper())
+        print("{} sent:".format(self.client_address[0]))
+        print(self.data)
 
-
-def main():
-    print("Hello from breakglass-dynamic-secrets!")
-
-if __name__ == "__main__":
-    main()
+with socketserver.UDPServer(("10.0.0.91", 1515), SyslogHandler) as server:
+    print("... listening for Syslog messages ...")
+    server.serve_forever()
