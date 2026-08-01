@@ -4,7 +4,11 @@ version = "0.1.0"
 description = "An event-driven python syslog parser for root-password rotation on Juniper enterprise network equipment"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "napalm=='5.2.0'",
+    "rich=='15.0.0",
+    "passlib=='1.7.4'"
+]
 
 # [build-system]
 # requires = ["uv_build >= 0.11.32, <0.12.0"]

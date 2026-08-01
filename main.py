@@ -1,4 +1,8 @@
 import socketserver
+from rotate import rotate_breakglass_user
+from rich.console import Console
+
+console = Console()
 
 class SyslogHandler(socketserver.BaseRequestHandler):
     def handle(self):
@@ -14,18 +18,17 @@ class SyslogHandler(socketserver.BaseRequestHandler):
 class UdpSyslogHandler(socketserver.BaseRequestHandler):
     def handle(self):
         data = self.request[0].strip()
-        syslog = data.decode(errors="replace")
-        meep = syslog.split()
+        syslog = data.decode(errors="replace").split()
 
         device_ip, device_port = self.client_address
         print(f'{device_ip}:{device_port} sent: {data.decode(errors="replace")}')
 
-        print(f' Reading this: {meep[5]} and {meep[7]}')
+        print(f' Reading this: {syslog[5]} and {syslog[7]}')
 
-        if meep[5].rstrip(":") == "UI_LOGIN_EVENT":
-            print("MAHORAHA HELP ME HELP ME")
-
-
+        if syslog[5].rstrip(":") == "UI_LOGIN_EVENT":
+                if "bg" in syslog[7].lower():
+                    console.print("Breakglass user login detected...", style="yellow")
+                    rotate_breakglass_user()
 
 # For udp server
 with socketserver.UDPServer(("10.0.0.91", 1515), UdpSyslogHandler) as server:
