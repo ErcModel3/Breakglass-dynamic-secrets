@@ -9,8 +9,6 @@ rotation_template = f"""
 system {{
     login {{
         user bg-srx1 {{
-            uid 2003;
-            class read-only;
             authentication {{
                 encrypted-password "{password_encr}";
             }}
