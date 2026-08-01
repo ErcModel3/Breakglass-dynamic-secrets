@@ -8,4 +8,4 @@ This (at present) is a series of python scripts (to be packaged at a later date)
 
 The compose file is brought up by entering this dir then running `docker-compose up -d`. once the containers are up you'll need to visit gitea at [git.localhost](git.localhost) to create an Oauth application to sync with [Woodpecker](woodpecker.localhost). More instructions are in `docker-compose.yaml`.
 
-Additionally, code secrets (especially not a break-glass credential) should not be stored in plaintext anywhere so the secret will be stored within hashicorp [vault](vault.localhost), a secrets manager.
+Additionally, code secrets (especially not a break-glass credential) should not be stored in plaintext anywhere so the secret will be stored within Hashicorp [Vault](vault.localhost), a secrets manager.
