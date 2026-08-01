@@ -1,0 +1,112 @@
+networks:
+  proxy:
+    driver: bridge
+
+volumes:
+  vault-data:
+  gitea-data:
+  woodpecker-server-data:
+
+services:
+
+  traefik:
+    image: traefik:v3.1
+    container_name: traefik
+    command:
+      - --api.dashboard=true
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+    ports:
+      - "80:80"
+      - "8080:8080"   # Traefik dashboard, http://localhost:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - proxy
+    restart: unless-stopped
+
+  vault:
+    image: hashicorp/vault:1.17
+    container_name: vault
+    cap_add:
+      - IPC_LOCK
+    environment:
+      # Dev-mode server: in-memory storage, auto-unsealed, root token below.
+      # Fine for local testing; swap for a file/raft backend + real init/unseal
+      # flow before this touches anything you care about.
+      VAULT_DEV_ROOT_TOKEN_ID: ${VAULT_ROOT_TOKEN}
+      VAULT_DEV_LISTEN_ADDRESS: 0.0.0.0:8200
+    volumes:
+      - vault-data:/vault/data
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.vault.rule=Host(`vault.localhost`)
+      - traefik.http.routers.vault.entrypoints=web
+      - traefik.http.services.vault.loadbalancer.server.port=8200
+    networks:
+      - proxy
+    restart: unless-stopped
+
+  gitea:
+    image: gitea/gitea:1.22
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - GITEA__server__DOMAIN=git.localhost
+      - GITEA__server__ROOT_URL=http://git.localhost/
+      - GITEA__server__SSH_DOMAIN=git.localhost
+      - GITEA__server__SSH_PORT=2222
+    volumes:
+      - gitea-data:/data
+    ports:
+      - "2222:22"   # git+ssh access, since Traefik only proxies HTTP
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.gitea.rule=Host(`git.localhost`)
+      - traefik.http.routers.gitea.entrypoints=web
+      - traefik.http.services.gitea.loadbalancer.server.port=3000
+    networks:
+      - proxy
+    restart: unless-stopped
+
+  woodpecker-server:
+    image: woodpeckerci/woodpecker-server:v3.16.0
+    container_name: woodpecker-server
+    environment:
+      - WOODPECKER_OPEN=true
+      - WOODPECKER_HOST=http://woodpecker.localhost
+      - WOODPECKER_GITEA=true
+      - WOODPECKER_GITEA_URL=http://gitea:3000
+      - WOODPECKER_GITEA_CLIENT=${WOODPECKER_GITEA_CLIENT}
+      - WOODPECKER_GITEA_SECRET=${WOODPECKER_GITEA_SECRET}
+      - WOODPECKER_AGENT_SECRET=${WOODPECKER_AGENT_SECRET}
+    volumes:
+      - woodpecker-server-data:/var/lib/woodpecker
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.woodpecker.rule=Host(`woodpecker.localhost`)
+      - traefik.http.routers.woodpecker.entrypoints=web
+      - traefik.http.services.woodpecker.loadbalancer.server.port=8000
+    networks:
+      - proxy
+    depends_on:
+      - gitea
+    restart: unless-stopped
+
+  woodpecker-agent:
+    image: woodpeckerci/woodpecker-agent:v3.16.0
+    container_name: woodpecker-agent
+    command: agent
+    environment:
+      - WOODPECKER_SERVER=woodpecker-server:9000
+      - WOODPECKER_AGENT_SECRET=${WOODPECKER_AGENT_SECRET}
+      - WOODPECKER_MAX_WORKFLOWS=2
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - proxy
+    depends_on:
+      - woodpecker-server
+    restart: unless-stopped

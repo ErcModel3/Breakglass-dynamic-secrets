@@ -1,9 +1,11 @@
-This folder is what makes this a real proof of concept, here lies a virtual lab of all the components needed to execute this proof of concept, running in (containerlab)[].
+# Util docker-compose file
+
+This folder is what makes this a real proof of concept, here lies the systems side of the proof of concept, what pulls it together.
 
 (topology diagram)[./diagram.png]
 
-This is deployed as a container running on the network to search for a root/emergency local user via syslog, if it finds the user then it sends an api call to a CI/automation tool to generate a new password, store it in the secret manager and deploy the new credential on the network device.
+This (at present) is a series of python scripts (to be packaged at a later date) but they're useless when used as a part of a wider network automation service. To replicate this, I've added this `docker-compose.yaml` file to simulate this.
 
-For this proof-of-concept I have used (Juniper's cSRX)[https://www.juniper.net/gb/en/products/security/srx-series/csrx-containerized-firewall.html] as the network device, (Gitea)[] as the code forge, (Woodpecker CI)[] as the CI engine, (OpenBao)[https://openbao.org/] as the secret manager and this application running on a containerised VM.
+The compose file is brought up by entering this dir then running `docker-compose up -d`. once the containers are up you'll need to visit gitea at [git.localhost](git.localhost) to create an Oauth application to sync with [Woodpecker](woodpecker.localhost). More instructions are in `docker-compose.yaml`.
 
-The code for the log generator can be found here: https://github.com/seth-paxton/syslog-generator
+Additionally, code secrets (especially not a break-glass credential) should not be stored in plaintext anywhere so the secret will be stored within hashicorp [vault](vault.localhost), a secrets manager.

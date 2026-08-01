@@ -1,9 +1,0 @@
----
-name: breakglass-dynamic-secret-poc
-
-topology:
-  nodes:
-    core1-test:
-      kind: nokia_srlinux
-      type: ixr-d5
-      image: ghcr.io/nokia/srlinux:24.10.6
