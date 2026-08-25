@@ -1,5 +1,8 @@
 # Breakglass Dynamic Secrets
 
+> [!IMPORTANT]
+> This repository does not accept contributions via github and is now maintained at [git.rubydelusion.dev]([git.rubydelusion.dev](https://git.rubydelusion.net/alex/Breakglass-dynamic-secrets).
+
 ### Background
 A breakglass user is a user with elevated privileges that can be used to access a system or network device in case of emergency or unforeseen circumstances where other (externally authenticated) users are inaccessible.
 
