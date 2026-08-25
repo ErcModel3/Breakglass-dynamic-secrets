@@ -1,6 +1,6 @@
 [project]
 name = "breakglass-dynamic-secrets"
-version = "0.1.0"
+version = "0.1.1"
 description = "An event-driven python syslog parser for root-password rotation on Juniper enterprise network equipment"
 readme = "README.md"
 requires-python = ">=3.14"
